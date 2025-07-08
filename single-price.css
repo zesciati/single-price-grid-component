@@ -16,12 +16,15 @@ html {
 :root {
   --clr-white: white;
   --clr-green-grass: #bfe033;
+  --bright-yellow: hsl(71, 73%, 54%);
   --clr-darker-green: #2bb4b1;
   --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
   --space-top-bottom: 1em 0;
   --space-selaras: 1rem;
   --space-selaras-v2: 2rem;
   --line-height-v1: 1.6;
+  --font-size-v1: calc(2vw + 1rem);
+  --font-size-v2: calc(1vw + 1rem);
 }
 
 body::before {
@@ -108,7 +111,7 @@ body {
   }
   h3{
     /* font-size: 2rem; */
-    font-size: calc(2vw + 1rem);
+    font-size: var(--font-size-v1);
 
   }
   p{
@@ -121,6 +124,26 @@ body {
   h2,p{
     color: var(--clr-white);
   }
+  h2{
+    font-size:var(--font-size-v2) ;
+  }
+  p{
+    font-size: 1.4rem;
+    width: 100%;
+  }
+  .dollar{
+    font-size: calc(3vw + 1rem);
+  }
+  .btn{
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--bright-yellow);
+    border: none;
+    border-radius: 3px;
+    padding: 1em;
+    color: var(--clr-white);
+    font-size: 1.4rem;
+  }
 }
 .us{
   padding: var(--space-selaras-v2);
@@ -128,7 +151,10 @@ body {
     color: var(--clr-white);
   }
   h2{
-    font-size: ;
+    font-size:var(--font-size-v2) ;
+  }
+  p{
+    font-size: 1.4rem;
   }
 }
 }
