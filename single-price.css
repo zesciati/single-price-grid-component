@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+
 html {
   box-sizing: border-box;
 }
@@ -16,6 +20,7 @@ html {
   --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
   --space-top-bottom: 1em 0;
   --space-selaras: 1rem;
+  --space-selaras-v2: 2rem;
   --line-height-v1: 1.6;
 }
 
@@ -34,6 +39,7 @@ body {
   place-items: center;
   display: grid;
   padding: var(--space-m);
+    font-family: "Karla", sans-serif;
 }
 
 .grid-container {
@@ -48,6 +54,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     max-width: 1200px;
     display: grid;
+    max-height: 80vh;
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
       "community community"
@@ -56,7 +63,7 @@ body {
 }
 .community {
   grid-area: community;
-  background-color: white;
+  background-color: var(--clr-white);
   padding: var(--space-selaras);
   h2 {
     color: var(--clr-darker-green);
@@ -92,4 +99,36 @@ body {
     width: 23ch;
     line-height: var(--line-height-v1);
   }
+}
+@media screen and (min-width: 768px) {
+.community{
+  padding: var(--space-selaras-v2);
+  h2{
+    font-size: calc(4vw + 1rem);
+  }
+  h3{
+    /* font-size: 2rem; */
+    font-size: calc(2vw + 1rem);
+
+  }
+  p{
+    width: 85%;
+    font-size: 2rem;
+  }
+}
+.subscription {
+  padding: var(--space-selaras-v2);
+  h2,p{
+    color: var(--clr-white);
+  }
+}
+.us{
+  padding: var(--space-selaras-v2);
+  h2, p{
+    color: var(--clr-white);
+  }
+  h2{
+    font-size: ;
+  }
+}
 }
