@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
 
 html {
   box-sizing: border-box;
@@ -25,6 +23,7 @@ html {
   --line-height-v1: 1.6;
   --font-size-v1: calc(2vw + 1rem);
   --font-size-v2: calc(1vw + 1rem);
+  --border-radius-top: 5px 5px 0 0;
 }
 
 body::before {
@@ -42,23 +41,25 @@ body {
   place-items: center;
   display: grid;
   padding: var(--space-m);
-    font-family: "Karla", sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
+  border-radius: 5px;
   max-width: 480px;
   grid-template-areas:
     "community"
     "subscription"
     "us";
+    
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    /* height: fit-content; */
     max-width: 1200px;
     display: grid;
-    max-height: 80vh;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 0.1.2fr 0.1.2fr;
     grid-template-areas:
       "community community"
       "subscription us";
@@ -66,6 +67,7 @@ body {
 }
 .community {
   grid-area: community;
+    border-radius: var(--border-radius-top);
   background-color: var(--clr-white);
   padding: var(--space-selaras);
   h2 {
@@ -85,76 +87,108 @@ body {
   padding: var(--space-selaras);
   background-color: var(--clr-darker-green);
 }
+.subscription h2 {
+  color: var(--clr-white);
+}
 .subscription p:nth-child(2) {
   padding: var(--space-top-bottom);
+  color: var(--clr-white);
 }
 .subscription p:nth-child(3) {
   padding-bottom: 1em;
+  color: var(--clr-white);
+}
+.subscription .dollar{
+      font-size: calc(3vw + 1rem);
+}
+.btn {
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--bright-yellow);
+  border: none;
+  border-radius: 3px;
+  padding: 1em;
+  color: var(--clr-white);
+  font-size: 1rem;
 }
 .us {
   grid-area: us;
+  border-radius: 0 0 5px 5px;
   background-color: #49bebd;
   padding: var(--space-selaras);
   h2 {
     padding-bottom: 1em;
+    color: var(--clr-white);
   }
   p {
     width: 23ch;
     line-height: var(--line-height-v1);
+    color: var(--clr-white);
   }
 }
-@media screen and (min-width: 768px) {
-.community{
-  padding: var(--space-selaras-v2);
-  h2{
-    font-size: calc(4vw + 1rem);
-  }
-  h3{
-    /* font-size: 2rem; */
-    font-size: var(--font-size-v1);
 
+
+
+
+@media screen and (min-width: 768px) {
+ 
+  .community {
+    border-radius: var(--border-radius-top);
+    padding: var(--space-selaras-v2);
+    h2 {
+      font-size: calc(4vw + 1rem);
+    }
+    h3 {
+      /* font-size: 2rem; */
+      padding: .8em 0 ;
+      font-size:  var(--font-size-v1);
+    }
+    p {
+      width: 85%;
+      font-size: 2rem;
+    }
   }
-  p{
-    width: 85%;
-    font-size: 2rem;
+  .subscription {
+    border-radius: 0 0 0 5px;
+
+    padding: var(--space-selaras-v2);
+    h2,
+    p {
+      color: var(--clr-white);
+    }
+    h2 {
+      font-size: var(--font-size-v2);
+    }
+    p {
+      font-size: 1.4rem;
+      width: 100%;
+    }
+    .dollar {
+      font-size: calc(3vw + 1rem);
+    }
+    .btn {
+      width: 100%;
+      max-width: 100%;
+      background-color: var(--bright-yellow);
+      border: none;
+      border-radius: 3px;
+      padding: 1em;
+      color: var(--clr-white);
+      font-size: 1.4rem;
+    }
   }
-}
-.subscription {
-  padding: var(--space-selaras-v2);
-  h2,p{
-    color: var(--clr-white);
+  .us {
+    border-radius: 0 0 5px 0;
+    padding: var(--space-selaras-v2);
+    h2,
+    p {
+      color: var(--clr-white);
+    }
+    h2 {
+      font-size: var(--font-size-v2);
+    }
+    p {
+      font-size: 1.4rem;
+    }
   }
-  h2{
-    font-size:var(--font-size-v2) ;
-  }
-  p{
-    font-size: 1.4rem;
-    width: 100%;
-  }
-  .dollar{
-    font-size: calc(3vw + 1rem);
-  }
-  .btn{
-    width: 100%;
-    max-width: 100%;
-    background-color: var(--bright-yellow);
-    border: none;
-    border-radius: 3px;
-    padding: 1em;
-    color: var(--clr-white);
-    font-size: 1.4rem;
-  }
-}
-.us{
-  padding: var(--space-selaras-v2);
-  h2, p{
-    color: var(--clr-white);
-  }
-  h2{
-    font-size:var(--font-size-v2) ;
-  }
-  p{
-    font-size: 1.4rem;
-  }
-}
 }
